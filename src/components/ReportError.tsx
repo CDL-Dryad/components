@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import React, { useState } from 'react'
 import { ReportTable } from './ReportTable'
 import { IReportError } from '../report'
-import SUGGESTIONS from '../config'
 
 // ReportError
 
@@ -16,7 +15,6 @@ export function ReportError(props: IReportErrorProps) {
   const [isDetailsVisible, setIsDetailsVisible] = useState(false)
   const [visibleRowsCount, setVisibleRowsCount] = useState(10)
   const rowPositions = getRowPositions(reportError)
-  setSuggestions(reportError)
 
   return (
     <div className="result">
@@ -41,10 +39,14 @@ export function ReportError(props: IReportErrorProps) {
       {/* Error details */}
       <div className={classNames(['collapse', { show: isDetailsVisible }])}>
         <div className="error-details">
-          {reportError.description && (
+          {`${reportError.description}\n\n${reportError.suggestion}` && (
             <div className="error-description">
               <div
-                dangerouslySetInnerHTML={{ __html: marked(reportError.description) }}
+                dangerouslySetInnerHTML={{
+                  __html: marked(
+                    `${reportError.description}\n\n${reportError.suggestion}`
+                  ),
+                }}
               />
             </div>
           )}
@@ -91,13 +93,4 @@ function getRowPositions(reportError: IReportError) {
   return Object.keys(reportError.data)
     .map((item) => parseInt(item, 10))
     .sort((a, b) => a - b)
-}
-
-function setSuggestions(reportError: IReportError) {
-  if (reportError.code in SUGGESTIONS) {
-    type Key = keyof typeof SUGGESTIONS.errors
-    const key: Key = reportError.code as Key
-    const suggestion = SUGGESTIONS.header + SUGGESTIONS.errors[key]
-    reportError.description += suggestion
-  }
 }

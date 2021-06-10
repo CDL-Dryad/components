@@ -1,8 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 import { ReportError } from './ReportError'
-import { IReportTask, IReportError } from '../report'
+import { IReportError, IReportTask } from '../report'
 import * as helpers from '../helpers'
+import SUGGESTIONS from '../config'
 
 export interface IReportTaskProps {
   task: IReportTask
@@ -15,6 +16,7 @@ export function ReportTask(props: IReportTaskProps) {
   const taskFile = helpers.removeBaseUrl(task.resource.path)
   const splitTableFile = helpers.splitFilePath(taskFile)
   const reportErrors = getReportErrors(task)
+
   return (
     <div className={classNames({ file: true, valid: task.valid, invalid: !task.valid })}>
       {/* Heading */}
@@ -65,6 +67,7 @@ export function getReportErrors(task: IReportTask) {
         name: error.name,
         tags: error.tags,
         description: error.description,
+        suggestion: setSuggestion(error.code),
         header,
         messages: [],
         data: {},
@@ -104,4 +107,14 @@ export function getReportErrors(task: IReportTask) {
   }
 
   return reportErrors
+}
+
+function setSuggestion(errorCode: string) {
+  if (errorCode in SUGGESTIONS.errors) {
+    type Key = keyof typeof SUGGESTIONS.errors
+    const key: Key = errorCode as Key
+    return `\n${SUGGESTIONS.header}\n\n${SUGGESTIONS.errors[key]}`
+  }
+
+  return ''
 }
