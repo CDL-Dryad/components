@@ -10,7 +10,7 @@ it('should render', () => {
   render(<ReportTask task={report.tasks[0]} taskNumber={1} tasksCount={1} />)
   expect(
     screen.getByText(
-      'Our automated checker found 8 formatting issues in your tabular data file. TODO: style this!'
+      'Our automated checker found 8 formatting issues in your tabular data file.'
     )
   ).toBeVisible()
 })
