@@ -19,7 +19,7 @@ export function ReportTask(props: IReportTaskProps) {
       {/* Heading */}
       <h4 className="file-heading">
         Our automated checker found {task.stats.errors} formatting issues in your tabular
-        data file.
+        data file. TODO: style this!
       </h4>
       <div>
         {/* Original package implementation: maintain by now for doesn't get lint errors,
