@@ -3,6 +3,8 @@
 ### Prerequisites
 - Node 14
 
+### Instructions
+
 1. Clone the package
 ```bash
 $ git clone https://github.com/CDL-Dryad/components.git 
