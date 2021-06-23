@@ -43,9 +43,10 @@ Committing changes will automatically run the tests.
 
 When a new release is ready to be published, run
 ```bash
+$ npm login # if you aren't logged in
 $ npm version <version_number>
 $ npm run build
-$ npm publish
+$ npm publish --access public
 ```
 Obs.: You can change the version manually in `package.json` instead of running `npm version <version_number>`
 
