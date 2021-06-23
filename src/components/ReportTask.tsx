@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 import { ReportError } from './ReportError'
-import { IReportTask, IReportError } from '../report'
-import * as helpers from '../helpers'
+import { IReportError, IReportTask } from '../report'
+import SUGGESTIONS from '../config'
 
 export interface IReportTaskProps {
   task: IReportTask
@@ -12,34 +12,22 @@ export interface IReportTaskProps {
 
 export function ReportTask(props: IReportTaskProps) {
   const { task, taskNumber, tasksCount } = props
-  const taskFile = helpers.removeBaseUrl(task.resource.path)
-  const splitTableFile = helpers.splitFilePath(taskFile)
   const reportErrors = getReportErrors(task)
+
   return (
     <div className={classNames({ file: true, valid: task.valid, invalid: !task.valid })}>
       {/* Heading */}
       <h4 className="file-heading">
-        <div className="inner">
-          <a className="file-name" href={task.resource.path}>
-            <strong>{splitTableFile.base}</strong>
-            <strong>{splitTableFile.sep}</strong>
-            <strong>{splitTableFile.name}</strong>
-            {!task.valid && (
-              <span
-                className="badge"
-                data-toggle="tooltip"
-                data-placement="right"
-                title={`${task.stats.errors} errors found for this task`}
-              >
-                {task.stats.errors}
-              </span>
-            )}
-          </a>
-          <span className="file-count">
-            Task {taskNumber} of {tasksCount}
-          </span>
-        </div>
+        Our automated checker found {task.stats.errors} formatting issues in your tabular
+        data file.
       </h4>
+      <div>
+        {/* Original package implementation: maintain by now for doesn't get lint errors,
+            since taskNumber and tasksCount are picked above from props. Just adding hidden */}
+        <span className="file-count" hidden={true}>
+          Task {taskNumber} of {tasksCount}
+        </span>
+      </div>
 
       {/* Error groups */}
       {Object.values(reportErrors).map((reportError) => (
@@ -65,6 +53,7 @@ export function getReportErrors(task: IReportTask) {
         name: error.name,
         tags: error.tags,
         description: error.description,
+        suggestion: setSuggestion(error.code),
         header,
         messages: [],
         data: {},
@@ -104,4 +93,14 @@ export function getReportErrors(task: IReportTask) {
   }
 
   return reportErrors
+}
+
+function setSuggestion(errorCode: string) {
+  if (errorCode in SUGGESTIONS.errors) {
+    type Key = keyof typeof SUGGESTIONS.errors
+    const key: Key = errorCode as Key
+    return `\n${SUGGESTIONS.header}\n\n${SUGGESTIONS.errors[key]}`
+  }
+
+  return ''
 }
