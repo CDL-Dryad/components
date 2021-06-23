@@ -26,6 +26,7 @@ export interface IReportError {
   name: string
   tags: string[]
   description: string
+  suggestion: string
   messages: string[]
   header: string[]
   data: {

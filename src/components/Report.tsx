@@ -52,7 +52,7 @@ export function Report(props: IReportProps) {
           className="form-control debug"
           value={JSON.stringify(report, null, 2)}
           onChange={(ev) => setReport(JSON.parse(ev.target.value))}
-        ></textarea>
+        />
       )}
 
       {/* Errors */}

@@ -15,6 +15,7 @@ export function ReportError(props: IReportErrorProps) {
   const [isDetailsVisible, setIsDetailsVisible] = useState(false)
   const [visibleRowsCount, setVisibleRowsCount] = useState(10)
   const rowPositions = getRowPositions(reportError)
+
   return (
     <div className="result">
       {/* Heading */}
@@ -38,10 +39,14 @@ export function ReportError(props: IReportErrorProps) {
       {/* Error details */}
       <div className={classNames(['collapse', { show: isDetailsVisible }])}>
         <div className="error-details">
-          {reportError.description && (
+          {`${reportError.description}\n\n${reportError.suggestion}` && (
             <div className="error-description">
               <div
-                dangerouslySetInnerHTML={{ __html: marked(reportError.description) }}
+                dangerouslySetInnerHTML={{
+                  __html: marked(
+                    `${reportError.description}\n\n${reportError.suggestion}`
+                  ),
+                }}
               />
             </div>
           )}

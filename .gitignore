@@ -52,3 +52,6 @@ dist/
 build/
 e2e/videos/
 package-lock.json
+
+# IDE's
+.idea
