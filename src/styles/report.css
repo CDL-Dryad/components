@@ -6,12 +6,6 @@
     height: 20em;
 }
 
-h1.file-heading {
-    color: #cf4817;
-    font-family: KievitWeb, sans-serif;
-    font-size: 32px !important;
-}
-
 .frictionless-components-report .file-heading {
     font-size: 14px;
     padding-top: 20px;
