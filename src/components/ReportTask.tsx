@@ -17,10 +17,10 @@ export function ReportTask(props: IReportTaskProps) {
   return (
     <div className={classNames({ file: true, valid: task.valid, invalid: !task.valid })}>
       {/* Heading */}
-      <h4 className="file-heading">
+      <h1 className="file-heading">
         Our automated checker found {task.stats.errors} formatting issues in your tabular
         data file.
-      </h4>
+      </h1>
       <div>
         {/* Original package implementation: maintain by now for doesn't get lint errors,
             since taskNumber and tasksCount are picked above from props. Just adding hidden */}

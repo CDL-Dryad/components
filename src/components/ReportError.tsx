@@ -20,7 +20,6 @@ export function ReportError(props: IReportErrorProps) {
     <div className="result">
       {/* Heading */}
       <div className="d-flex align-items-center">
-        <span className="count">{reportError.count} x</span>
         <a
           role="button"
           className={classNames({
@@ -34,6 +33,7 @@ export function ReportError(props: IReportErrorProps) {
         >
           {reportError.name}
         </a>
+          <span className="count">x {reportError.count}</span>
       </div>
 
       {/* Error details */}
