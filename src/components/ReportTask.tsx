@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
-import { ReportError } from './ReportError'
-import { IReportError, IReportTask } from '../report'
+import {ReportError} from './ReportError'
+import {IReportError, IReportTask} from '../report'
 import SUGGESTIONS from '../config'
 
 export interface IReportTaskProps {
@@ -23,6 +23,10 @@ export function ReportTask(props: IReportTaskProps) {
         obligated to do so, we recommend resolving the following formatting issues and
         re-uploading the file. If you use the exact same filename, the corrected file with
         automatically replace this one.
+      </p>
+      <p>
+        Our automated checker found {task.stats.errors} formatting issues in your tabular
+        data file.
       </p>
       <div>
         {/* Original package implementation: maintain by now for doesn't get lint errors,
