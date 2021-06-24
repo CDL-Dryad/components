@@ -33,7 +33,7 @@ export function ReportError(props: IReportErrorProps) {
         >
           {reportError.name}
         </a>
-          <span className="count">x {reportError.count}</span>
+        <span className="count">x {reportError.count}</span>
       </div>
 
       {/* Error details */}
