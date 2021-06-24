@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
-import {ReportError} from './ReportError'
-import {IReportError, IReportTask} from '../report'
+import { ReportError } from './ReportError'
+import { IReportError, IReportTask } from '../report'
 import SUGGESTIONS from '../config'
 
 export interface IReportTaskProps {
