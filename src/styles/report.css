@@ -164,9 +164,13 @@
 
 .frictionless-components-report .result .badge.badge-error {
     position: relative;
-    background-color: #F13C3F;
-    cursor: pointer;
+    color: #005581;
+    font-size: 2em;
+    font-family: KievitWeb, sans-serif;
+    /* background-color: #F13C3F;
     color: #fff;
+     */
+    cursor: pointer;
     z-index: 2;
 }
 

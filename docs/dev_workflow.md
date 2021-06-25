@@ -58,3 +58,11 @@ Run
 $ yarn install
 ```
 in the root dir.
+
+## Committing
+
+It will run a bunch of tests and probably not allow you to commit.
+
+Try running to autofix something that it hates for some reason.
+
+`yarn prettier -w '{src,test}/**/*.ts*'`
