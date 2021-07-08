@@ -1,8 +1,8 @@
 import marked from 'marked'
 import classNames from 'classnames'
-import React, {useState} from 'react'
-import {ReportTable} from './ReportTable'
-import {IReportError} from '../report'
+import React, { useState } from 'react'
+import { ReportTable } from './ReportTable'
+import { IReportError } from '../report'
 
 // ReportError
 
