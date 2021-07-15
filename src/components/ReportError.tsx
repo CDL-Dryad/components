@@ -31,7 +31,14 @@ export function ReportError(props: IReportErrorProps) {
           onClick={() => setIsDetailsVisible(!isDetailsVisible)}
           aria-expanded="false"
         >
-          {reportError.name}
+          <span
+            className={classNames({
+              'expando-open': isDetailsVisible,
+              'expando-closed': !isDetailsVisible,
+            })}
+          >
+            {reportError.name}
+          </span>
         </a>
         <span className="count">x {reportError.count}</span>
       </div>
