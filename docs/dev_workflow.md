@@ -33,11 +33,20 @@ $ npm run test
 This runs tests using `jest` with coverage, as defined in `package.json`.
 It runs `npm run lint` also, to check good code formatting.
 
-Obs.: all the commands `npm run <command>` are defined in `package.json`.
+You may need to run the build to recompile css, etc from the src directory.
+
+```bash
+$ npm run build  # see package.json scripts section for other scripts that can be run
+```
 
 5. Committing changes
 
 Committing changes will automatically run the tests.
+
+```bash
+git add .
+
+```
 
 6. Generating a new release and publishing in `npmjs.com` repository
 
