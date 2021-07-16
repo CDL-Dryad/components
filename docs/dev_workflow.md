@@ -45,7 +45,7 @@ Committing changes will automatically run the tests.
 
 ```bash
 git add .
-
+git commit -m "My commit message"
 ```
 
 6. Generating a new release and publishing in `npmjs.com` repository
