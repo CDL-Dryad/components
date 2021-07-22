@@ -85,7 +85,6 @@ if (NODE_ENV === 'stage') {
   webpackConfig.output.filename = 'frictionless-components.min.js'
   webpackConfig.devtool = 'source-map'
   webpackConfig.plugins = [
-    ...webpackConfig.plugins,
     new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
     new CompressionPlugin({
       algorithm: 'gzip',
@@ -93,6 +92,7 @@ if (NODE_ENV === 'stage') {
       threshold: 10240,
       minRatio: 0.8,
     }),
+    ...webpackConfig.plugins,
   ]
 }
 
@@ -103,7 +103,6 @@ if (NODE_ENV === 'production') {
   webpackConfig.output.filename = 'frictionless-components.min.js'
   webpackConfig.devtool = 'source-map'
   webpackConfig.plugins = [
-    ...webpackConfig.plugins,
     new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
     new CompressionPlugin({
       algorithm: 'gzip',
@@ -111,6 +110,7 @@ if (NODE_ENV === 'production') {
       threshold: 10240,
       minRatio: 0.8,
     }),
+    ...webpackConfig.plugins,
   ]
 }
 
