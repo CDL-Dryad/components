@@ -78,12 +78,13 @@ if (NODE_ENV === 'testing') {
   ]
 }
 
-// Stage
+// Production
 
-if (NODE_ENV === 'stage') {
+if (NODE_ENV === 'production') {
   webpackConfig.mode = 'production'
   webpackConfig.output.filename = 'frictionless-components.min.js'
   webpackConfig.devtool = 'source-map'
+  /*
   webpackConfig.plugins = [
     new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
     new CompressionPlugin({
@@ -94,22 +95,9 @@ if (NODE_ENV === 'stage') {
     }),
     ...webpackConfig.plugins,
   ]
-}
-
-// Production
-
-if (NODE_ENV === 'production') {
-  webpackConfig.mode = 'production'
-  webpackConfig.output.filename = 'frictionless-components.min.js'
-  webpackConfig.devtool = 'source-map'
+   */
   webpackConfig.plugins = [
-    new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      test: /\.(js|html)$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
+    new ExtractCssPlugin({ filename: 'frictionless-components.css' }),
     ...webpackConfig.plugins,
   ]
 }
