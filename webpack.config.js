@@ -84,7 +84,6 @@ if (NODE_ENV === 'production') {
   webpackConfig.mode = 'production'
   webpackConfig.output.filename = 'frictionless-components.min.js'
   webpackConfig.devtool = 'source-map'
-  /*
   webpackConfig.plugins = [
     new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
     new CompressionPlugin({
@@ -93,12 +92,6 @@ if (NODE_ENV === 'production') {
       threshold: 10240,
       minRatio: 0.8,
     }),
-    ...webpackConfig.plugins,
-  ]
-   */
-  webpackConfig.plugins = [
-    new ExtractCssPlugin({ filename: 'frictionless-components.css' }),
-    ...webpackConfig.plugins,
   ]
 }
 
