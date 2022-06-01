@@ -47,8 +47,8 @@
     right: 0px;
     background-color: #fff;
     z-index: -1;
-    border-bottom: solid 1px #B3B3B3;
-    border-top: solid 1px #B3B3B3;
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
 }
 
 .frictionless-components-report .file-heading .file-count,
@@ -74,7 +74,7 @@
 @media screen and (min-width: 768px) {
     .frictionless-components-report .file-heading .file-count {
         display: table-cell;
-        color: #aaa;
+        color: black;
     }
 }
 
@@ -90,31 +90,31 @@
 }
 
 .frictionless-components-report .file.warning .file-heading .inner:before {
-    border-bottom-color: #f0ad4e;
+    border-bottom-color: #c14315;
 }
 
 .frictionless-components-report .file.valid .file-heading .inner:before {
-    border-top-color: #01CD81;
-    border-bottom-color: #01CD81;
+    border-top-color: black;
+    border-bottom-color: black;
 }
 
 .frictionless-components-report .file.valid .file-heading strong {
-    color: #01CD81;
+    color: black;
 }
 
 .frictionless-components-report .file.invalid .file-heading .inner:before {
-    border-top-color: #F13C3F;
-    border-bottom-color: #F13C3F;
+    border-top-color: #c14315;
+    border-bottom-color: #c14315;
 }
 
 .frictionless-components-report .file.invalid .file-heading strong {
-    color: #F13C3F;
+    color: #c14315;
 }
 
 .frictionless-components-report .file.invalid .file-heading .badge {
-    background-color: #F13C3F;
+    background-color: #fdeee8;
     border-radius: 8px;
-    color: white;
+    color: #c14315;
 }
 
 .frictionless-components-report .result {
@@ -176,7 +176,7 @@
 
 .frictionless-components-report .result .error-details {
     font-size: 14px;
-    border: solid 2px #F13C3F;
+    border: solid 2px #c14315;
     border-radius: 3px;
     margin-top: -2px;
 }
@@ -190,17 +190,17 @@
 }
 
 .frictionless-components-report .result .error-details .error-description + .error-list {
-    border-top: solid 1px #F13C3F;
+    border-top: solid 1px #c14315;
 }
 
 .frictionless-components-report .result .error-details .error-description + .error-list .error-list-heading {
-    background-color: rgba(253, 231, 232, 0.5);
+    background-color: #fdeee8;
 }
 
 .frictionless-components-report .result .error-details .error-list .error-list-heading {
     padding: 7.5px 15px;
     margin: 0;
-    border-bottom: solid 1px rgba(241, 60, 63, 0.3);
+    border-bottom: solid 1px #c14315;
     font-weight: 500;
 }
 
@@ -211,12 +211,12 @@
     font-size: 0.85em;
     margin: 0;
     padding: 5px 0;
-    background-color: rgba(253, 231, 232, 0.3);
+    background-color: #fdeee8;
 }
 
 .frictionless-components-report .result .error-details .error-list ul li {
     padding: 5px 15px;
-    border-bottom: solid 1px rgba(241, 60, 63, 0.1);
+    border-bottom: solid 1px #c14315;
 }
 
 .frictionless-components-report .result .error-details .error-list ul li:last-child {
@@ -246,7 +246,7 @@
 }
 
 .frictionless-components-report .result .table-view table tr.fail td {
-    background-color: #fde7e8;
+    background-color: #fdeee8;
 }
 
 .frictionless-components-report .result .table-view table tr:first-child {
@@ -273,20 +273,20 @@
     right: -5px;
     background-color: #fff;
     height: 10px;
-    border-top: solid 1px #B3B3B3;
-    border-bottom: solid 1px #B3B3B3;
-    outline: solid 4px #fff;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    outline: solid 4px white;
 }
 
 .frictionless-components-report .result .table-view table td {
     border-style: solid;
-    border-color: #B3B3B3;
+    border-color: black;
     border-width: 1px 0 0 1px;
     position: relative;
 }
 
 .frictionless-components-report .result .table-view table td.fail {
-    background-color: #fde7e8;
+    background-color: #fdeee8;
 }
 
 .frictionless-components-report .result .table-view table td.col-pass {
@@ -299,7 +299,7 @@
     position: absolute;
     bottom: 0;
     top: -5px;
-    background-color: #fff;
+    background-color: white;
 }
 
 .frictionless-components-report .result .table-view table td.col-pass + .col-before-fail:before {
@@ -310,8 +310,8 @@
 .frictionless-components-report .result .table-view table td.col-pass + .col-before-fail:after {
     width: 10px;
     left: 8px;
-    border-left: solid 1px #B3B3B3;
-    border-right: solid 1px #B3B3B3;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
 }
 
 .frictionless-components-report .result .table-view table td.col-after-fail:not(:last-child):before, .frictionless-components-report .result .table-view table td.col-after-fail:not(:last-child):after {
@@ -320,7 +320,7 @@
     position: absolute;
     bottom: 0;
     top: -5px;
-    background-color: #fff;
+    background-color: white;
 }
 
 .frictionless-components-report .result .table-view table td.col-after-fail:not(:last-child):before {
@@ -331,8 +331,8 @@
 .frictionless-components-report .result .table-view table td.col-after-fail:not(:last-child):after {
     width: 10px;
     right: 8px;
-    border-left: solid 1px #B3B3B3;
-    border-right: solid 1px #B3B3B3;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
 }
 
 .frictionless-components-report .result .table-view table.table {
@@ -345,17 +345,17 @@
 .frictionless-components-report .result .table-view table.table th {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid black;
 }
 
 .frictionless-components-report .result .table-view table.table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid black;
 }
 
 .frictionless-components-report .result .table-view table tbody + tbody {
-    border-top: 2px solid #dee2e6;
+    border-top: 2px solid black;
 }
 
 .frictionless-components-report .result .table-view table.table-sm th {
@@ -368,7 +368,7 @@
 
 .frictionless-components-report .result .table-view table.table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid black;
 }
 
 .frictionless-components-report .result .table-view .result-row-index {
