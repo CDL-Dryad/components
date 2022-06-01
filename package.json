@@ -1,10 +1,10 @@
 {
   "name": "@cdl-dryad/frictionless-components",
-  "version": "0.3.9",
+  "version": "1.2.0",
   "license": "MIT",
   "author": "roll <eskarev@gmail.com>",
-  "description": "Visual components for frictionless",
-  "homepage": "https://github.com/frictionlessdata/frictionless-ui",
+  "description": "Data integration components for TypeScript/React that implement Frictionless Data concepts in visual UI.",
+  "homepage": ["https://github.com/frictionlessdata/frictionless-ui", "https://github.com/CDL-Dryad/components"],
   "bugs": "https://github.com/frictionlessdata/frictionless-ui/issues",
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
     "e2e": "cypress run",
     "format": "prettier --write '{src,test}/**/*.ts*' && eslint --fix '{src,test}/**/*.ts*'",
     "lint": "prettier --check '{src,test}/**/*.ts*' && eslint '{src,test}/**/*.ts*'",
-    "prepare": "husky install",
     "pretest": "npm run lint",
     "readme": "doctoc --maxlevel 3 README.md",
     "test": "jest --coverage",
@@ -38,16 +37,20 @@
   "dependencies": {
     "@types/lodash": "^4.14.168",
     "@types/marked": "^2.0.1",
+    "@types/uuid": "^8.3.0",
     "classnames": "^2.3.1",
     "jsonschema": "^1.4.0",
     "jszip": "^3.6.0",
     "lodash": "^4.17.21",
     "marked": "^2.0.1",
-    "use-async-effect": "^2.2.3"
+    "react-sortable-hoc": "^2.0.0",
+    "tableschema": "^1.12.4",
+    "use-async-effect": "^2.2.3",
+    "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -79,14 +82,12 @@
     "eslint-plugin-standard": "^5.0.0",
     "file-loader": "^6.2.0",
     "http-server": "^0.12.3",
-    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.4.1",
     "node-fetch": "^2.6.1",
     "npm-check-updates": "^11.4.1",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
-    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
     "react-test-renderer": "^17.0.2",
