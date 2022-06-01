@@ -88,7 +88,6 @@ if (NODE_ENV === 'production') {
   webpackConfig.output.filename = 'frictionless-components.min.js'
   webpackConfig.devtool = 'source-map'
   webpackConfig.plugins = [
-    ...webpackConfig.plugins,
     new ExtractCssPlugin({ filename: 'frictionless-components.min.css' }),
     new CompressionPlugin({
       algorithm: 'gzip',

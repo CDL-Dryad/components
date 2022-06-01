@@ -12,7 +12,7 @@ export interface IReportErrorProps {
 
 export function ReportError(props: IReportErrorProps) {
   const { reportError } = props
-  const [isDetailsVisible, setIsDetailsVisible] = useState(false)
+  const [isDetailsVisible, setIsDetailsVisible] = useState(true)
   const [visibleRowsCount, setVisibleRowsCount] = useState(10)
   const rowPositions = getRowPositions(reportError)
 
