@@ -1,3 +1,4 @@
+import { IDict } from './common'
 /* Configuration constants */
 
 const SUGGESTIONS = {
@@ -48,7 +49,6 @@ const SUGGESTIONS = {
 }
 
 export default SUGGESTIONS
-import { IDict } from './common'
 
 // General
 
