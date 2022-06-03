@@ -39,9 +39,23 @@ export function ReportTask(props: IReportTaskProps) {
 
 // Helpers
 
+export function removeBaseUrl(text: string) {
+  return text.replace(/https:\/\/raw\.githubusercontent\.com\/\S*?\/\S*?\/\S*?\//g, '')
+}
+
+export function splitFilePath(path: string) {
+  const parts = path.split('/')
+  return {
+    name: parts.pop(),
+    base: parts.join('/'),
+    sep: parts.length ? '/' : '',
+  }
+}
+
 export function getReportErrors(task: IReportTask) {
   const reportErrors: { [code: string]: IReportError } = {}
   for (const error of task.errors) {
+    if (!task.resource.schema) continue
     const header = task.resource.schema.fields.map((field) => field.name)
 
     // Prepare reportError
